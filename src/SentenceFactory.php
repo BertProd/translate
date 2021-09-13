@@ -11,7 +11,7 @@ final class SentenceFactory
     private const CONFIG_STORE_CURRENT_LANG_TO_SESSION = 'store_current_lang_to_session';
     private const CONFIG_SESSION_VARIABLE_NAME = 'session_variable_name';
 
-    public function createFromIni(string $pPathIniFile, string $pSentenceFile) : Sentence
+    public function createFromIni(string $pPathIniFile, string $pSentenceFile): Sentence
     {
         if (!file_exists($pPathIniFile)) {
             throw new InvalidArgumentException('Requested ini file does not exist');
@@ -23,7 +23,8 @@ final class SentenceFactory
 
         $iniData = parse_ini_file($pPathIniFile, true);
 
-        $storeToSession = '1' === $iniData[self::SECTION_CONFIG][self::CONFIG_STORE_CURRENT_LANG_TO_SESSION] ? true : false;
+        $storeToSession = $iniData[self::SECTION_CONFIG][self::CONFIG_STORE_CURRENT_LANG_TO_SESSION];
+        $storeToSession = '1' === $storeToSession ? true : false;
 
         $data = [
             Sentence::CONFIG_DEFAULT_LANG => $iniData[self::SECTION_CONFIG][self::CONFIG_DEFAULT_LANG],
