@@ -1,0 +1,13 @@
+{
+    "LABEL_HELLO_WORLD" : {
+        "en": "Hello world!",
+        "fr": "Bonjour le monde!"
+    },
+
+    "LABEL_OTHER_LABEL" : {
+        "en": "Other stuff"
+    },
+    "LABEL_FOR_SOMETHING_ELSE": {
+        "de": "otra cosa"
+    }
+}
